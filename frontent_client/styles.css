@@ -1,0 +1,42 @@
+body{
+    box-sizing: border-box;
+    --background-color: #de7154;
+    --backround-clor-final-gradient: #48e;
+    background-image: linear-gradient(var(--background-color),var(--backround-clor-final-gradient));
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    font-size: 1.2rem;
+}
+
+h2{
+    text-align: center;
+}
+
+.crear-cuenta-container{
+    background-color: aliceblue;
+    width: fit-content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    margin-top: 3.5rem;
+    padding-left : 2.5rem;
+    padding-right: 2.5rem ;
+    border-radius: 5%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+input{
+    padding: .5rem;
+}
+
+#fileName{
+    display: none;
+}

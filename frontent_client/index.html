@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Interfacez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="main.js" defer></script>
+    <div class="flex-container">
+        <div class="crear-cuenta-container">
+            <h2>Create Account</h2>
+            <form>
+                <label for="name-input">Name:</label>
+                    <input type="text" placeholder="juanito" id="name-input" required>
+                <label for="password-input">Password:</label>
+                    <input type="password" id="password-input" placeholder="12345" required>
+                <label for="company-name">Company Name:</label>
+                    <input type="text" placeholder="juanitoCorp" id="company-name" required>
+                    <style>
+                #drop_zone {
+                border: 2px dashed #4488ee;
+                padding: 20px;
+                width: 300px;
+                text-align: center;
+                color: #555;
+                }
+                </style>
+
+                <div id="drop_zone">Arrastra tu archivo aquí</div>
+                <input type="text" id="fileName" placeholder="Nombre del archivo" readonly>
+
+                <script>
+                const dropZone = document.getElementById("drop_zone");
+                const fileNameInput = document.getElementById("fileName");
+
+                // Evitar que el navegador abra el archivo al arrastrarlo
+                dropZone.addEventListener("dragover", (event) => {
+                    event.preventDefault();
+                    dropZone.style.backgroundColor = "#eef"; // efecto visual
+                });
+
+                dropZone.addEventListener("dragleave", () => {
+                    dropZone.style.backgroundColor = ""; // quitar efecto
+                });
+
+                dropZone.addEventListener("drop", (event) => {
+                    event.preventDefault();
+                    dropZone.style.backgroundColor = "";
+
+                    const files = event.dataTransfer.files;
+                    if (files.length > 0) {
+                        const file = files[0];
+                        // Mostrar el nombre del archivo en el input
+                        fileNameInput.value = file.name;
+                        console.log(fileNameInput.value)
+                    }
+                });
+                </script>
+                <input type="button" id="Create-account-button" value="Confirmar">
+            </form>
+            <script>
+                const button = document.getElementById("Create-account-button");
+                button.addEventListener("click",(e)=>{e.preventDefault()});
+            </script>
+        </div>
+    </div>
+</body>
+</html>

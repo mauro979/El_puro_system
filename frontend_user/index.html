@@ -1,0 +1,39 @@
+<style>
+#drop_zone {
+    border: 2px dashed #4488ee;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    color: #555;
+}
+</style>
+
+<div id="drop_zone">Arrastra tu archivo aquí</div>
+<input type="text" id="fileName" placeholder="Nombre del archivo" readonly>
+
+<script>
+const dropZone = document.getElementById("drop_zone");
+const fileNameInput = document.getElementById("fileName");
+
+// Evitar que el navegador abra el archivo al arrastrarlo
+dropZone.addEventListener("dragover", (event) => {
+    event.preventDefault();
+    dropZone.style.backgroundColor = "#eef"; // efecto visual
+});
+
+dropZone.addEventListener("dragleave", () => {
+    dropZone.style.backgroundColor = ""; // quitar efecto
+});
+
+dropZone.addEventListener("drop", (event) => {
+    event.preventDefault();
+    dropZone.style.backgroundColor = "";
+
+    const files = event.dataTransfer.files;
+    if (files.length > 0) {
+        const file = files[0];
+        // Mostrar el nombre del archivo en el input
+        fileNameInput.value = file.name;
+    }
+});
+</script>
