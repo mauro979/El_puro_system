@@ -1,12 +1,13 @@
 body{
     box-sizing: border-box;
-    --background-color: #de7154;
-    --backround-clor-final-gradient: #48e;
+    --background-color: #010a16;
+    --backround-clor-final-gradient: rgb(36, 87, 163);
     background-image: linear-gradient(var(--background-color),var(--backround-clor-final-gradient));
     width: 100dvw;
     height: 100dvh;
     overflow: hidden;
     font-size: 1.2rem;
+    margin: 0;
 }
 
 h2{
@@ -15,16 +16,17 @@ h2{
 
 .crear-cuenta-container{
     background-color: aliceblue;
-    width: fit-content;
     padding: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    width: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-self: center;
-    margin-top: 3.5rem;
-    padding-left : 2.5rem;
-    padding-right: 2.5rem ;
+    margin-top: 5.5rem;
     border-radius: 5%;
+    box-shadow: rgb(16, 21, 32) 5px 5px 5px 5px;
 }
 
 form{
@@ -35,8 +37,59 @@ form{
 
 input{
     padding: .5rem;
+    transition: background-color .2s;
+    background-color: #fff;
+    /*border-radius: 10px;*/
+}
+
+input:hover{
+    background-color: #8c9caf1e;
+    transition: background-color .2s;
+
 }
 
 #fileName{
     display: none;
+}
+
+label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#drop_zone {
+    border: 2px dashed #4488ee;
+    padding: 20px;
+    width: 80%;
+    align-self: center;
+    text-align: center;
+    color: #555;
+}
+
+#Create-account-button{
+    transition: background-color .2s;
+    border-radius: 10px;
+}
+
+#Create-account-button:hover{
+    background-color: #2e45631e;
+    transition: background-color .2s;
+}
+
+@media screen and (max-width: 1064px) {
+    .crear-cuenta-container{
+        padding: 3rem;
+        width: fit-content;
+    }
+
+    input{
+        width: auto;
+    }
+
+    #Create-account-button{
+        width: auto;
+    }
+
+    #drop_zone{
+        width: calc(100% - 20%);
+    }
 }
