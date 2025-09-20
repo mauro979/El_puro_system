@@ -7,12 +7,15 @@ def add_user(url_data : str, user):
         "username" : user.username,
         "company_name" : user.company_name,
         "logo" : user.logo,
+        "admin" : user.admin,
         "password" : user.password
     }
     # print(str(new_user))
 
     with open(url_data, 'w', encoding='UTF-8') as file:
         json.dump(new_user, file, ensure_ascii=False, indent=4)
+
+
 
 # class User:
 #     def __init__(self,username,company_name,logo,password):
